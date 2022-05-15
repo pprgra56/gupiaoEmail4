@@ -43,5 +43,5 @@ def sendEmail(title,title2,text):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     sendEmail('PyCharm',"96","99")
-    print('df_over')
+    
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
