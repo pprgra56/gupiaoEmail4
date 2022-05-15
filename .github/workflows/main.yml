@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   schedule:
-    - cron: "45 11 * * *"
+    - cron: "53 11 * * *"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -38,5 +38,4 @@ jobs:
           pip install Header
       - name:update gupiao
         run: |
-          cd gupioaEmail4
           python main.py
