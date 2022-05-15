@@ -3,7 +3,7 @@
 name: CI
 on:
   schedule:
-    - cron: "32 12 * * *"
+    - cron: "37 12 * * *"
  
   workflow_dispatch:
 
@@ -18,12 +18,19 @@ jobs:
      
       - uses: actions/checkout@v3
 
-      - name: Set up Python 3.8
+      - name: Set up Python 3.9
         uses: actions/setup-python@v3
         with:
-          python-version: 3.8
- 
+          python-version: 3.9
           
-      - name: tijiaoEmail
+      - name: Install dependencies
         run: |
+         python -m pip install --upgrade pip
+         pip install smtplib
+         pip install MIMEText
+         pip install Header
+        
+      - name: updateEmail
+        run: |
+          cd gupiaoEmail4
           python main.py
