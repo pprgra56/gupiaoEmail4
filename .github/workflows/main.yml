@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   schedule:
-    - cron: "48 15 * * *"
+    - cron: "53 15 * * *"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -28,7 +28,7 @@ jobs:
       - name: setup python 3.9
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8
+          python-version: 3.9
         
       
 
@@ -42,5 +42,6 @@ jobs:
           
       - name: update gupiao
         run: |
-          cd gupioaEmail4
+          cd gupiaoEmail4
+
           python main.py
