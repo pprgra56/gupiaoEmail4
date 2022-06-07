@@ -42,4 +42,4 @@ jobs:
           
       - name: update gupiao
         run: |
-          python /main.py
+          python ..main.py
