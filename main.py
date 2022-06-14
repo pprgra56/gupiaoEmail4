@@ -5,7 +5,8 @@
 import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
-
+import tushare as ts
+import pandas as pd
 
 #发送邮件
 def sendEmail(title,title2,text):
@@ -42,6 +43,37 @@ def sendEmail(title,title2,text):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    sendEmail('PyCharm',"96_你好,世界","666")
+    
+    # 显示所有列
+
+    pd.set_option('display.max_columns', None)
+
+    # 显示所有行
+
+    pd.set_option('display.max_rows', None)
+
+
+    token = "4f04c552120afb0d76d0aaedb27e8ed2274373a6fba1a567439ea846"
+
+    pro = ts.pro_api(token)
+
+    df =pro.stock_company(tscode='600518',exchange='SZSE',fields='ts_code,chairman,manager,province,city')
+
+    yibo = 20000
+
+    erbo = 30000
+
+    shanbo = 50000
+
+    ts_code = '002676.SZ'
+
+    time_begin = '20220610'
+
+    time_end = '20220614'
+
+    info = pro.daily(ts_code=ts_code, start_date=time_begin, end_date=time_end)
+
+    print(info)
+    sendEmail('PyCharm',"96_你好,世界",info)
     
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
