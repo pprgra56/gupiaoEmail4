@@ -74,6 +74,6 @@ if __name__ == '__main__':
     info = pro.daily(ts_code=ts_code, start_date=time_begin, end_date=time_end)
 
     print(info)
-    sendEmail('PyCharm',"96_你好,世界",info['high'][0])
+    sendEmail('PyCharm',"96_你好,世界",str(info['high'][0])
     
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
